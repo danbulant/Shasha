@@ -1,7 +1,8 @@
 'use strict';
 
 const commando = require("@iceprod/discord.js-commando");
-const { trySend, ranLog, defaultImageEmbed } = require("../../resources/functions");
+const { trySend, defaultImageEmbed } = require("../../resources/functions");
+const { fetchNeko } = require("nekos-best.js");
 
 module.exports = class neko extends commando.Command {
     constructor(client) {
@@ -9,13 +10,14 @@ module.exports = class neko extends commando.Command {
             name: "neko",
             memberName: "neko",
             group: "image",
-            description: "Neko."
+            description: "Neko"
         });
     }
     async run(msg) {
-        const title = `${msg.guild ? msg.member.displayName : msg.author.username}! ~Nyann~ (UwU) <3`;
-        const image = `https://nekos.best/nekos/${String(Math.floor(Math.random() * 450)).padStart(4, '0')}.png`;
-        const emb = await defaultImageEmbed(msg, image, title);
+        msg.channel.startTyping();
+        const title = `${msg.guild ? msg.member.displayName : msg.author.username} ~Nyann~`;
+        const image = await fetchNeko("nekos");
+        const emb = defaultImageEmbed(msg, image.url); emb.setAuthor(title, msg.author.displayAvatarURL({ size: 128, format: "png", dynamic: true }));
         return trySend(this.client, msg, emb);
     }
 };

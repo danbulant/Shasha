@@ -1,23 +1,26 @@
 {
   "dependencies": {
-    "@iceprod/discord.js-commando": "^0.14.3",
+    "@iceprod/discord.js-commando": "github:iceproductions/Commando#next",
+    "axios": "^0.21.1",
     "bree": "^6.2.0",
     "bufferutil": "^4.0.3",
     "cabin": "^9.0.4",
-    "cleverbot-node": "^0.3.11",
-    "discord.js": "^12.5.2",
-    "discord.js-commando": "^0.12.3",
+    "discord.js": "^12.5.3",
+    "erlpack": "github:discord/erlpack",
     "fs-extra": "^9.1.0",
     "lodash": "^4.17.21",
+    "luxon": "^2.0.1",
     "mongodb": "^3.6.6",
+    "nekos-best.js": "^4.0.1",
     "node": "^15.12.0",
-    "node-fetch": "^2.6.1",
+    "require-all": "^3.0.0",
     "sqlite": "^4.0.21",
     "sqlite3": "^5.0.2",
     "utf-8-validate": "^5.0.4",
     "zlib-sync": "^0.1.7"
   },
-  "optionalDependencies": {
-    "erlpack": "github:discord/erlpack"
+  "devDependencies": {
+    "@types/bree": "^6.2.1",
+    "@types/luxon": "^1.27.1"
   }
 }
